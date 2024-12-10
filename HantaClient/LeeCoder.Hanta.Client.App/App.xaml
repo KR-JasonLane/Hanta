@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LeeCoder.Hanta.Client.App">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <!--ViewModel과 View를 맵핑시켜 Content에 등록 된 ViewModel에 대한 View를 호출-->
+                <ResourceDictionary Source="/LeeCoder.hanta.Client.App;component/ResourceDictionary/MappingDictionary.xaml"/>
+
+                <!--Material Design 라이브러리 리소스 등록-->
+                <ResourceDictionary Source="/LeeCoder.hanta.Client.App;component/ResourceDictionary/MaterialDesignDictionary.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

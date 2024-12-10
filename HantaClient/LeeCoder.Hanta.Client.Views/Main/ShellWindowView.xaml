@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeeCoder.Hanta.Client.Views.Main"
         mc:Ignorable="d"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Title="ShellWindowView" 
         Height="450" Width="800">
 
@@ -13,6 +15,9 @@
     </WindowChrome.WindowChrome>
     
     <Grid>
+               
+        
+        
         
     </Grid>
 </Window>
