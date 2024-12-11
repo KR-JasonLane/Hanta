@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Client.ViewM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Client.Abstract", "LeeCoder.Hanta.Client.Abstract\LeeCoder.Hanta.Client.Abstract.csproj", "{1FFCA1B6-6F07-4347-B9D8-12E1CDDB6FA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C1944C63-5C29-4B54-B7BF-14DDC205463E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{09C7829E-1811-43F8-ACD5-F461A8600BEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{76912B9B-E077-46B2-8F1C-D66832F72918}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +42,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15D4B966-4F50-4D2B-836B-4C2E01C90E66} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
+		{3DB3332F-0AE7-4A1F-8403-DAA2293DFA5D} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
+		{F495D7AA-C98D-44F6-885C-A81657D0F68A} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
+		{1FFCA1B6-6F07-4347-B9D8-12E1CDDB6FA4} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5878F959-87A8-479E-9177-EF7C375905A5}

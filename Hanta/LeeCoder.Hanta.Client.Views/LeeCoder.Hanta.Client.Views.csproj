@@ -11,4 +11,8 @@
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Login\" />
+  </ItemGroup>
+
 </Project>

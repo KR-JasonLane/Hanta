@@ -1,2 +1,2 @@
-# Hanta_Client
-한타 클라이언트
+# Hanta Groupware
+한타 그룹웨어
