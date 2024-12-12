@@ -7,10 +7,10 @@
             <ResourceDictionary.MergedDictionaries>
 
                 <!--ViewModel과 View를 맵핑시켜 Content에 등록 된 ViewModel에 대한 View를 호출-->
-                <ResourceDictionary Source="/LeeCoder.hanta.Client.App;component/ResourceDictionary/MappingDictionary.xaml"/>
+                <ResourceDictionary Source="/LeeCoder.Hanta.Client.App;component/ResourceDictionary/MappingDictionary.xaml"/>
 
                 <!--Material Design 라이브러리 리소스 등록-->
-                <ResourceDictionary Source="/LeeCoder.hanta.Client.App;component/ResourceDictionary/MaterialDesignDictionary.xaml"/>
+                <ResourceDictionary Source="/LeeCoder.Hanta.Design;component/ResourceDictionary/MaterialDesignDictionary.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

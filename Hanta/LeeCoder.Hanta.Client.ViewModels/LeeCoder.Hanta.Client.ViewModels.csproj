@@ -16,8 +16,4 @@
     <ProjectReference Include="..\LeeCoder.Hanta.Client.Abstract\LeeCoder.Hanta.Client.Abstract.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Login\" />
-  </ItemGroup>
-
 </Project>

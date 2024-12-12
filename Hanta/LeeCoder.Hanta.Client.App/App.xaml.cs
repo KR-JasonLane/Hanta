@@ -1,7 +1,8 @@
-﻿using LeeCoder.Hanta.Client.App.Builder;
-
-using LeeCoder.Hanta.Client.ViewModels.Main;
-using LeeCoder.Hanta.Client.Views.Main;
+﻿using LeeCoder.Hanta.Client.Abstract.Serivce;
+using LeeCoder.Hanta.Client.App.Builder;
+using LeeCoder.Hanta.Client.ViewModels.Login;
+using LeeCoder.Hanta.Client.Views.Login;
+using LeeCoder.Hanta.Common.Enums;
 
 namespace LeeCoder.Hanta.Client.App;
 
@@ -17,20 +18,33 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        ////////////////////////////////////////
-        // 의존성 주입 객체 빌드
-        ////////////////////////////////////////
-        {
-            IocBuilder.Build();
-        }
+        //의존성주입 객체 빌드
+        IocBuilder.Build();
+                
+        //로그서비스 객체 호출
+        ILogService logService = Ioc.Default.GetService<ILogService>()!;
 
+        //시작로그 작성
+        logService.Write(LogType.Normal, ":: 한타 클라이언트 프로그램 시작 ::");
 
-        ////////////////////////////////////////
-        // 한타 메인 윈도우 세팅
-        ////////////////////////////////////////
+        //로그인에 성공하지 못하면 프로그램 종료
+        if(Login() == false)
         {
-            this.MainWindow = new ShellWindowView() { DataContext = Ioc.Default.GetService<ShellWindowViewModel>() };
-            this.MainWindow.Show();
+            logService.Write(LogType.Warning, ":: 로그인창 -> 프로세스 종료 ::");
+            Process.GetCurrentProcess().Kill();
         }
+    }
+
+    /// <summary>
+    /// 로그인
+    /// </summary>
+    /// <returns> 로그인 성공여부 </returns>
+    private bool Login()
+    {
+        //로그인 뷰 띄워주기
+        var loginView = new LoginWindowView() { DataContext = Ioc.Default.GetService<LoginWindowViewModel>() };
+
+        //결과 반환
+        return loginView.ShowDialog() ?? false;
     }
 }

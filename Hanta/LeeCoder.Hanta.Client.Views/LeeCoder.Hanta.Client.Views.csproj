@@ -8,11 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Login\" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Design\LeeCoder.Hanta.Design.csproj" />
   </ItemGroup>
 
 </Project>

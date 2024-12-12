@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.csproj" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeeCoder.Hanta.Client.Abstract\LeeCoder.Hanta.Client.Abstract.csproj" />
   </ItemGroup>
 
 </Project>
