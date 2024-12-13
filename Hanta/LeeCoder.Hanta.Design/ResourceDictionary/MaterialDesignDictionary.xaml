@@ -2,7 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
     <ResourceDictionary.MergedDictionaries>
-        <md:CustomColorTheme BaseTheme="Dark" PrimaryColor="Orange" SecondaryColor="LemonChiffon" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+        
+        <!--기본 테마 설정-->
+        <md:CustomColorTheme BaseTheme="Dark" PrimaryColor="LightSkyBlue" SecondaryColor="Gray" />
+
+        <!--리소스 참조-->
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />
+
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

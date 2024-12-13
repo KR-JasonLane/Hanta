@@ -4,15 +4,149 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeeCoder.Hanta.Client.Views.Login"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="LoginWindowView" 
-        Height="450" Width="800">
+        Background="AliceBlue"
+        FontFamily="{StaticResource Jalnan}"
+        Height="400" 
+        Width="600">
     
     <WindowChrome.WindowChrome>
-        <WindowChrome ResizeBorderThickness="4" GlassFrameThickness="5" CaptionHeight="0"/>
+        <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="5" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" 
+              IsHitTestVisible="False">
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <Image Source="pack://application:,,,/LeeCoder.Hanta.Design;component/Resource/Image/Hanta_Default_600_600.png"
+                       Width="200"
+                       Height="200"/>
+
+                <TextBlock Style="{StaticResource HantaBoldTextBlockStyle}"
+                           VerticalAlignment="Center"
+                           Foreground="DeepSkyBlue"
+                           FontSize="40"
+                           Text="Hanta Client"
+                           TextAlignment="Center"/>
+
+            </StackPanel>            
+
+        </Grid>
+
+        <Grid Grid.Column="1" Cursor="">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"
+                  Margin="10">
+                
+                <Button Style="{StaticResource MaterialDesignIconButton}"
+                        HorizontalAlignment="Left"
+                        Width="30"
+                        Height="30"
+                        ToolTip="서버 설정"
+                        ToolTipService.InitialShowDelay="0">
+
+                    <md:PackIcon Kind="ServerNetwork"/>
+
+                </Button>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                            HorizontalAlignment="Right"
+                            Width="30"
+                            Height="30"
+                            ToolTip="창닫기"
+                            ToolTipService.InitialShowDelay="0">
+
+                        <md:PackIcon Kind="Close"
+                                     Foreground="Crimson"/>
+
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+
+            <StackPanel Grid.Row="1"
+                        VerticalAlignment="Center">
+
+                <TextBox Style="{StaticResource HantaDefaultTextBoxStyle}"
+                         md:HintAssist.Hint="아이디"
+                         md:HintAssist.Background="AliceBlue"
+                         Margin="10"/>
+
+                <PasswordBox Style="{StaticResource HantaDefaultPasswordBoxStyle}"
+                             md:HintAssist.Hint="비밀번호"
+                             md:HintAssist.Background="AliceBlue"
+                             Margin="10"/>
+
+                <Grid Margin="10 0">
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left">
+
+                        <ToggleButton Style="{StaticResource HantaDefaultCheckBoxStyle}">
+
+                            <md:ToggleButtonAssist.SwitchTrackOnBackground>
+                                <SolidColorBrush Color="DeepSkyBlue" />
+                            </md:ToggleButtonAssist.SwitchTrackOnBackground>
+
+                        </ToggleButton>
+
+
+                        <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="0 2 0 0"
+                                   Text="아이디 저장"/>
+
+                    </StackPanel>
+
+                    <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
+                               HorizontalAlignment="Right"
+                               Margin="0 2 0 0"
+                               Text="비밀번호 초기화"
+                               Opacity="0.5"
+                               Cursor="Hand"/>
+
+                </Grid>
+
+                <Button Style="{StaticResource HantaDefaultButtonStyle}"
+                        md:ButtonAssist.CornerRadius="25"
+                        VerticalAlignment="Center"
+                        Content="로그인"
+                        Margin="10"
+                        FontSize="25"
+                        Height="50"/>
+
+            </StackPanel>
+
+            <Button Grid.Row="2"
+                    Margin="10"
+                    Style="{StaticResource HantaNoneBackgroundButtonStyle}"
+                    Content="가입요청"/>
+
+        </Grid>
         
     </Grid>
+    
 </Window>
