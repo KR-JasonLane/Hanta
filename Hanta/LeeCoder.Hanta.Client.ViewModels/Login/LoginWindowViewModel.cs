@@ -1,5 +1,6 @@
 ﻿using LeeCoder.Hanta.Client.Abstract.Serivce;
 using LeeCoder.Hanta.Client.ViewModels.Base;
+using LeeCoder.Hanta.Common.Models;
 
 namespace LeeCoder.Hanta.Client.ViewModels.Login;
 
@@ -11,8 +12,8 @@ public partial class LoginWindowViewModel : HantaViewModelBase
     /// 생성자
     /// </summary>
     public LoginWindowViewModel(ILogService logService) : base(logService)
-    { 
-
+    {
+        LoginInfo = new LoginInfoModel();
     }
 
     #endregion
@@ -24,19 +25,7 @@ public partial class LoginWindowViewModel : HantaViewModelBase
     /// 유저 아이디
     /// </summary>
     [ObservableProperty]
-    private string _userID = string.Empty;
-
-    /// <summary>
-    /// 유저 비밀번호
-    /// </summary>
-    [ObservableProperty]
-    private string _userPW = string.Empty;
-
-    /// <summary>
-    /// 아이디 저장 여부
-    /// </summary>
-    [ObservableProperty]
-    private bool _isSaveUserID = false;
+    private LoginInfoModel _loginInfo;
 
     #endregion
 

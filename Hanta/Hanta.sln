@@ -17,13 +17,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{09C782
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{76912B9B-E077-46B2-8F1C-D66832F72918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Common", "LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.csproj", "{8AE6C1CA-DAEE-4650-8EC6-746B8D82564B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common", "LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.csproj", "{8AE6C1CA-DAEE-4650-8EC6-746B8D82564B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Design", "LeeCoder.Hanta.Design\LeeCoder.Hanta.Design.csproj", "{D6401F85-62BE-4365-BBD3-81B4B7FDE33C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Design", "LeeCoder.Hanta.Design\LeeCoder.Hanta.Design.csproj", "{D6401F85-62BE-4365-BBD3-81B4B7FDE33C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B84346E1-3FA1-4317-9954-DB57B700A2B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Client.Services", "LeeCoder.Hanta.Client.Services\LeeCoder.Hanta.Client.Services.csproj", "{C28224A1-002D-452D-AEAC-4FD43C714705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Client.Services", "LeeCoder.Hanta.Client.Services\LeeCoder.Hanta.Client.Services.csproj", "{C28224A1-002D-452D-AEAC-4FD43C714705}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Server.App", "LeeCoder.Hanta.Server.App\LeeCoder.Hanta.Server.App.csproj", "{851FAA8F-84C1-4EAA-A998-2010639448E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Server.Views", "LeeCoder.Hanta.Server.Views\LeeCoder.Hanta.Server.Views.csproj", "{D66398DE-5A16-489A-A5E7-E1FFA75243E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Server.ViewModels", "LeeCoder.Hanta.Server.ViewModels\LeeCoder.Hanta.Server.ViewModels.csproj", "{4F905AE4-06CE-444C-8456-692EDB442E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Server.Abstract", "LeeCoder.Hanta.Server.Abstract\LeeCoder.Hanta.Server.Abstract.csproj", "{3EDF58DD-2272-47CF-B2D8-916A34D025F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +67,22 @@ Global
 		{C28224A1-002D-452D-AEAC-4FD43C714705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C28224A1-002D-452D-AEAC-4FD43C714705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C28224A1-002D-452D-AEAC-4FD43C714705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851FAA8F-84C1-4EAA-A998-2010639448E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851FAA8F-84C1-4EAA-A998-2010639448E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851FAA8F-84C1-4EAA-A998-2010639448E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851FAA8F-84C1-4EAA-A998-2010639448E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66398DE-5A16-489A-A5E7-E1FFA75243E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66398DE-5A16-489A-A5E7-E1FFA75243E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66398DE-5A16-489A-A5E7-E1FFA75243E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66398DE-5A16-489A-A5E7-E1FFA75243E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F905AE4-06CE-444C-8456-692EDB442E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F905AE4-06CE-444C-8456-692EDB442E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F905AE4-06CE-444C-8456-692EDB442E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F905AE4-06CE-444C-8456-692EDB442E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDF58DD-2272-47CF-B2D8-916A34D025F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDF58DD-2272-47CF-B2D8-916A34D025F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDF58DD-2272-47CF-B2D8-916A34D025F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDF58DD-2272-47CF-B2D8-916A34D025F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +95,10 @@ Global
 		{8AE6C1CA-DAEE-4650-8EC6-746B8D82564B} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 		{D6401F85-62BE-4365-BBD3-81B4B7FDE33C} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 		{C28224A1-002D-452D-AEAC-4FD43C714705} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
+		{851FAA8F-84C1-4EAA-A998-2010639448E4} = {76912B9B-E077-46B2-8F1C-D66832F72918}
+		{D66398DE-5A16-489A-A5E7-E1FFA75243E1} = {76912B9B-E077-46B2-8F1C-D66832F72918}
+		{4F905AE4-06CE-444C-8456-692EDB442E48} = {76912B9B-E077-46B2-8F1C-D66832F72918}
+		{3EDF58DD-2272-47CF-B2D8-916A34D025F4} = {76912B9B-E077-46B2-8F1C-D66832F72918}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5878F959-87A8-479E-9177-EF7C375905A5}

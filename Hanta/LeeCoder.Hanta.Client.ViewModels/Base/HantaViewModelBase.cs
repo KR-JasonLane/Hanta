@@ -13,7 +13,6 @@ public abstract partial class HantaViewModelBase : ObservableRecipient, IHantaVi
     /// <summary>
     /// 생성자
     /// </summary>
-    /// <param name="logService"></param>
     public HantaViewModelBase(ILogService logService)
     {
         ////////////////////////////////////////

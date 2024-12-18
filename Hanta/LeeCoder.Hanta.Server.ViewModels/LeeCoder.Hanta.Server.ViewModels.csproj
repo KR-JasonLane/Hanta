@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeeCoder.Hanta.Client.Abstract\LeeCoder.Hanta.Client.Abstract.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Server.Abstract\LeeCoder.Hanta.Server.Abstract.csproj" />
   </ItemGroup>
 
 </Project>

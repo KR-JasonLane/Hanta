@@ -96,13 +96,14 @@
                          md:HintAssist.Hint="아이디"
                          md:HintAssist.Background="AliceBlue"
                          Margin="10"
-                         Text="{Binding UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                         Text="{Binding LoginInfo.UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
 
                 <PasswordBox Style="{StaticResource HantaDefaultPasswordBoxStyle}"
                              md:HintAssist.Hint="비밀번호"
                              md:HintAssist.Background="AliceBlue"
                              Margin="10"
-                             md:PasswordBoxAssist.Password="{Binding UserPW, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                             md:PasswordBoxAssist.Password="{Binding LoginInfo.UserPW, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Grid Margin="10 0">
 
@@ -110,7 +111,7 @@
                                 HorizontalAlignment="Left">
 
                         <ToggleButton Style="{StaticResource HantaDefaultCheckBoxStyle}"
-                                      IsChecked="{Binding IsSaveUserID}">
+                                      IsChecked="{Binding LoginInfo.IsSaveUserID}">
 
                             <md:ToggleButtonAssist.SwitchTrackOnBackground>
                                 <SolidColorBrush Color="DeepSkyBlue" />
