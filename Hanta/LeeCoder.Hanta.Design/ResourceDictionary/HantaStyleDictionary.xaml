@@ -6,7 +6,14 @@
     <!--          Font          -->
     <!--                        -->
     
-    <FontFamily x:Key="Jalnan">pack://application:,,,/LeeCoder.Hanta.Design;component/Resource/Font/#여기어때 잘난체 2 TTF</FontFamily>
+    <FontFamily x:Key="Jalnan">pack://application:,,,/LeeCoder.Hanta.Common.Design;component/Resource/Font/#여기어때 잘난체 2 TTF</FontFamily>
+
+
+    <!--                               -->
+    <!--          ImageSource          -->
+    <!--                               -->
+    <ImageSource x:Key="HantaLogoImageSource_600_600">pack://application:,,,/LeeCoder.Hanta.Common.Design;component/Resource/Image/Hanta_Default_600_600.png</ImageSource>
+    
 
     <!--                             -->
     <!--          TextBlock          -->

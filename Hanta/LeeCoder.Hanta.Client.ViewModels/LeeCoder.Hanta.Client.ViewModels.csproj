@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeeCoder.Hanta.Client.Abstract\LeeCoder.Hanta.Client.Abstract.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Abstract\LeeCoder.Hanta.Common.Abstract.csproj" />
   </ItemGroup>
 
 </Project>

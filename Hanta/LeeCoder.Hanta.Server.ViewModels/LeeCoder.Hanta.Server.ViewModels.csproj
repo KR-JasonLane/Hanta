@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Abstract\LeeCoder.Hanta.Common.Abstract.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.Shared.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Server.Abstract\LeeCoder.Hanta.Server.Abstract.csproj" />
   </ItemGroup>
 

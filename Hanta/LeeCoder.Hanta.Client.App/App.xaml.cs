@@ -1,8 +1,9 @@
-﻿using LeeCoder.Hanta.Client.Abstract.Serivce;
+﻿using LeeCoder.Hanta.Common.Shared.Enums;
+using LeeCoder.Hanta.Common.Abstract.Serivce;
+
 using LeeCoder.Hanta.Client.App.Builder;
-using LeeCoder.Hanta.Client.ViewModels.Login;
 using LeeCoder.Hanta.Client.Views.Login;
-using LeeCoder.Hanta.Common.Enums;
+using LeeCoder.Hanta.Client.ViewModels.Login;
 
 namespace LeeCoder.Hanta.Client.App;
 
@@ -30,7 +31,6 @@ public partial class App : Application
         //로그인에 성공하지 못하면 프로그램 종료
         if(Login() == false)
         {
-            logService.Write(LogType.Warning, ":: 로그인창 -> 프로세스 종료 ::");
             Process.GetCurrentProcess().Kill();
         }
     }

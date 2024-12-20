@@ -13,6 +13,8 @@
     <ProjectReference Include="..\LeeCoder.Hanta.Client.Services\LeeCoder.Hanta.Client.Services.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Client.ViewModels\LeeCoder.Hanta.Client.ViewModels.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Client.Views\LeeCoder.Hanta.Client.Views.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Services\LeeCoder.Hanta.Common.Services.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Design\LeeCoder.Hanta.Common.Design.csproj" />
   </ItemGroup>
 
 </Project>

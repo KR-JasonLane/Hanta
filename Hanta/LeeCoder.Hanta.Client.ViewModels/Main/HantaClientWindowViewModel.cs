@@ -1,20 +1,21 @@
-﻿using LeeCoder.Hanta.Server.ViewModels.Base;
+﻿using LeeCoder.Hanta.Common.Abstract.Serivce;
+using LeeCoder.Hanta.Client.ViewModels.Base;
 
-namespace LeeCoder.Hanta.Server.ViewModels.Main;
+namespace LeeCoder.Hanta.Client.ViewModels.Main;
 
 /// <summary>
 /// 한타 메인 윈도우 데이터 콘텍스트
 /// </summary>
-public partial class HantaWindowViewModel : HantaViewModelBase
+public partial class HantaClientWindowViewModel : HantaClientViewModelBase
 {
     #region :: Constructor ::
 
     /// <summary>
     /// 생성자
     /// </summary>
-    public HantaWindowViewModel() : base()
+    public HantaClientWindowViewModel(ILogService logService) : base(logService)
     {
-
+        
     }
 
     #endregion

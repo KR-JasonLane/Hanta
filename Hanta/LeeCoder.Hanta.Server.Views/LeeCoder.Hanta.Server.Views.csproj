@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeeCoder.Hanta.Design\LeeCoder.Hanta.Design.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Design\LeeCoder.Hanta.Common.Design.csproj" />
   </ItemGroup>
 
 </Project>

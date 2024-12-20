@@ -40,7 +40,7 @@ public class IocBuilder
         // Window DataContexts
         ////////////////////////////////////////
         {
-            services.AddTransient<HantaWindowViewModel>();
+            services.AddTransient<HantaClientWindowViewModel>();
             services.AddTransient<LoginWindowViewModel>();
         }
 

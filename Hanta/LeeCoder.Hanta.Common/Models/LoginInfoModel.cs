@@ -1,4 +1,4 @@
-﻿namespace LeeCoder.Hanta.Common.Models;
+﻿namespace LeeCoder.Hanta.Common.Shared.Models;
 
 /// <summary>
 /// 로그인 정보 모델

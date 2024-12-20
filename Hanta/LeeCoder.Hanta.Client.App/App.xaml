@@ -10,10 +10,10 @@
                 <ResourceDictionary Source="/LeeCoder.Hanta.Client.App;component/ResourceDictionary/MappingDictionary.xaml"/>
 
                 <!--Material Design 라이브러리 리소스 등록-->
-                <ResourceDictionary Source="/LeeCoder.Hanta.Design;component/ResourceDictionary/MaterialDesignDictionary.xaml"/>
+                <ResourceDictionary Source="/LeeCoder.Hanta.Common.Design;component/ResourceDictionary/MaterialDesignDictionary.xaml"/>
 
                 <!--한타 스타일 정의 리소스 등록-->
-                <ResourceDictionary Source="/LeeCoder.Hanta.Design;component/ResourceDictionary/HantaStyleDictionary.xaml"/>
+                <ResourceDictionary Source="/LeeCoder.Hanta.Common.Design;component/ResourceDictionary/HantaStyleDictionary.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

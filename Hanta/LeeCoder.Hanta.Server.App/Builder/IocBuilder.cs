@@ -1,4 +1,6 @@
-﻿using LeeCoder.Hanta.Server.Abstract.ViewModel;
+﻿using LeeCoder.Hanta.Common.Abstract.Serivce;
+using LeeCoder.Hanta.Common.Services.Logger;
+
 using LeeCoder.Hanta.Server.ViewModels.Main;
 
 namespace LeeCoder.Hanta.Server.App.Builder;
@@ -30,6 +32,7 @@ public class IocBuilder
         // Services
         ////////////////////////////////////////
         {
+            services.AddSingleton<ILogService, LogService>();
         }
 
 
@@ -37,7 +40,7 @@ public class IocBuilder
         // Window DataContexts
         ////////////////////////////////////////
         {
-            services.AddTransient<HantaWindowViewModel>();
+            services.AddTransient<HantaServerWindowViewModel>();
         }
 
 

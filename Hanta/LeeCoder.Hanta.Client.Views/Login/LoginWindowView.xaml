@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:LeeCoder.Hanta.Client.Views.Login"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:bhv="clr-namespace:LeeCoder.Hanta.Common.Shared.Behaviors;assembly=LeeCoder.Hanta.Common.Shared"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="LoginWindowView" 
-        Background="AliceBlue"
+        Title="HANTA" 
         FontFamily="{StaticResource Jalnan}"
         Height="400" 
         Width="600">
@@ -17,21 +17,24 @@
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="5" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    
-    <Grid>
+
+    <Grid Background="AliceBlue">
+        
+        <i:Interaction.Behaviors>
+            <bhv:WindowDragMoveBehavior TargetWindow="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        </i:Interaction.Behaviors>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" 
-              IsHitTestVisible="False">
+        <Grid Grid.Column="0">
 
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center">
 
-                <Image Source="pack://application:,,,/LeeCoder.Hanta.Design;component/Resource/Image/Hanta_Default_600_600.png"
+                <Image Source="{StaticResource HantaLogoImageSource_600_600}"
                        Width="200"
                        Height="200"/>
 

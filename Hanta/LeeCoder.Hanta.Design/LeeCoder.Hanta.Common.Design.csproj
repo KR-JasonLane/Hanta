@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resource\Font\Jalnan.ttf" />
     <Resource Include="Resource\Image\Hanta_Default_600_600.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -1,6 +1,6 @@
-﻿namespace LeeCoder.Hanta.Client.Views.Main;
+﻿namespace LeeCoder.Hanta.Common.Views.Main;
 
 /// <summary>
-/// 한타 클라이언트 메인 윈도우
+/// HantaWindowView.xaml에 대한 상호 작용 논리
 /// </summary>
 public partial class HantaWindowView : Window { public HantaWindowView() => InitializeComponent(); }

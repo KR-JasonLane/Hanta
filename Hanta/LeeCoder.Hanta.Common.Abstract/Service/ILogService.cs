@@ -1,6 +1,6 @@
-﻿using LeeCoder.Hanta.Common.Enums;
+﻿using LeeCoder.Hanta.Common.Shared.Enums;
 
-namespace LeeCoder.Hanta.Client.Abstract.Serivce;
+namespace LeeCoder.Hanta.Common.Abstract.Serivce;
 
 /// <summary>
 /// 로그작성 서비스 추상화

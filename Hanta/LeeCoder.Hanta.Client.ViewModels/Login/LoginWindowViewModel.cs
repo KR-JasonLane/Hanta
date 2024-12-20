@@ -1,10 +1,10 @@
-﻿using LeeCoder.Hanta.Client.Abstract.Serivce;
-using LeeCoder.Hanta.Client.ViewModels.Base;
-using LeeCoder.Hanta.Common.Models;
+﻿using LeeCoder.Hanta.Client.ViewModels.Base;
+using LeeCoder.Hanta.Common.Shared.Models;
+using LeeCoder.Hanta.Common.Abstract.Serivce;
 
 namespace LeeCoder.Hanta.Client.ViewModels.Login;
 
-public partial class LoginWindowViewModel : HantaViewModelBase
+public partial class LoginWindowViewModel : HantaClientViewModelBase
 {
     #region :: Constructor ::
 
@@ -28,7 +28,6 @@ public partial class LoginWindowViewModel : HantaViewModelBase
     private LoginInfoModel _loginInfo;
 
     #endregion
-
 
     #region :: Methods ::
 

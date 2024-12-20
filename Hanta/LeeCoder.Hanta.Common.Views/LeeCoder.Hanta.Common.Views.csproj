@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeeCoder.Hanta.Common\LeeCoder.Hanta.Common.Shared.csproj" />
+    <Compile Update="Main\HantaWindowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

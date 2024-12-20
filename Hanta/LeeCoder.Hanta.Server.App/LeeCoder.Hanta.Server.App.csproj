@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Abstract\LeeCoder.Hanta.Common.Abstract.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Services\LeeCoder.Hanta.Common.Services.csproj" />
+    <ProjectReference Include="..\LeeCoder.Hanta.Common.Views\LeeCoder.Hanta.Common.Views.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Server.Abstract\LeeCoder.Hanta.Server.Abstract.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Server.ViewModels\LeeCoder.Hanta.Server.ViewModels.csproj" />
     <ProjectReference Include="..\LeeCoder.Hanta.Server.Views\LeeCoder.Hanta.Server.Views.csproj" />
