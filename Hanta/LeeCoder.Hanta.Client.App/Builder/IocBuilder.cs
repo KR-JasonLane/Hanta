@@ -1,5 +1,5 @@
-﻿using LeeCoder.Hanta.Client.Abstract.Serivce;
-using LeeCoder.Hanta.Client.Services.Debug;
+﻿using LeeCoder.Hanta.Common.Services.Logger;
+using LeeCoder.Hanta.Common.Abstract.Serivce;
 using LeeCoder.Hanta.Client.ViewModels.Login;
 using LeeCoder.Hanta.Client.ViewModels.Main;
 

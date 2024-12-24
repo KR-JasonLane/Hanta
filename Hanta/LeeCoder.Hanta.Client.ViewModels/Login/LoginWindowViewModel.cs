@@ -13,7 +13,7 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     /// </summary>
     public LoginWindowViewModel(ILogService logService) : base(logService)
     {
-        LoginInfo = new LoginInfoModel();
+        LoginModel = new LoginSettingModel();
     }
 
     #endregion
@@ -25,7 +25,7 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     /// 유저 아이디
     /// </summary>
     [ObservableProperty]
-    private LoginInfoModel _loginInfo;
+    private LoginSettingModel _loginModel;
 
     #endregion
 
