@@ -1,5 +1,5 @@
 ﻿using LeeCoder.Hanta.Common.Shared.Enums;
-using LeeCoder.Hanta.Common.Abstract.Serivce;
+using LeeCoder.Hanta.Common.Shared.Helpers;
 
 using LeeCoder.Hanta.Client.App.Builder;
 using LeeCoder.Hanta.Client.Views.Login;
@@ -19,19 +19,30 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        //의존성주입 객체 빌드
-        IocBuilder.Build();
-                
-        //로그서비스 객체 호출
-        ILogService logService = Ioc.Default.GetService<ILogService>()!;
-
-        //시작로그 작성
-        logService.Write(LogType.Normal, ":: 한타 클라이언트 프로그램 시작 ::");
-
-        //로그인에 성공하지 못하면 프로그램 종료
-        if(Login() == false)
+        ////////////////////////////////////////
+        // 의존성주입 객체 빌드
+        ////////////////////////////////////////
         {
-            Process.GetCurrentProcess().Kill();
+            IocBuilder.Build();
+        }
+
+
+        ////////////////////////////////////////
+        //시작로그 작성
+        ////////////////////////////////////////
+        {
+            LogHelper.Write(LogType.Normal, ":: 한타 클라이언트 프로그램 시작 ::");
+        }
+
+
+        ////////////////////////////////////////
+        //로그인에 성공하지 못하면 프로그램 종료
+        ////////////////////////////////////////
+        {
+            if (Login() == false)
+            {
+                Process.GetCurrentProcess().Kill();
+            }
         }
     }
 
@@ -46,5 +57,13 @@ public partial class App : Application
 
         //결과 반환
         return loginView.ShowDialog() ?? false;
+    }
+
+    /// <summary>
+    /// 전역 예외처리
+    /// </summary>
+    private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+    {
+        ExceptionHelper.ProcessException(e.Exception, true, "시스템에 치명적인 오류가 발생했습니다.");
     }
 }

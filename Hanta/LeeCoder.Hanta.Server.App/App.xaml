@@ -1,7 +1,8 @@
 ﻿<Application x:Class="LeeCoder.Hanta.Server.App.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LeeCoder.Hanta.Server.App">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+             xmlns:local="clr-namespace:LeeCoder.Hanta.Server.App"
+             DispatcherUnhandledException="OnDispatcherUnhandledException">
     
     <Application.Resources>
         <ResourceDictionary>

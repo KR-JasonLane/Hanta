@@ -1,5 +1,4 @@
-﻿using LeeCoder.Hanta.Common.Abstract.Serivce;
-using LeeCoder.Hanta.Client.ViewModels.Base;
+﻿using LeeCoder.Hanta.Client.ViewModels.Base;
 
 namespace LeeCoder.Hanta.Client.ViewModels.Main;
 
@@ -13,7 +12,7 @@ public partial class HantaClientWindowViewModel : HantaClientViewModelBase
     /// <summary>
     /// 생성자
     /// </summary>
-    public HantaClientWindowViewModel(ILogService logService) : base(logService)
+    public HantaClientWindowViewModel()
     {
         
     }

@@ -8,16 +8,18 @@ namespace LeeCoder.Hanta.Common.Shared.Models;
 public partial class EncryptPasswordModel : ObservableObject
 {
     /// <summary>
-    /// 패스워드 저장
+    /// 패스워드
     /// Json직렬화에는 포함되지 않음
     /// </summary>
-    [JsonIgnore]
     [ObservableProperty]
+    [property: JsonIgnore]
     private string _password = string.Empty;
 
     /// <summary>
     /// 암호화된 패스워드
+    /// Json직렬화에는 포함되지 않음
     /// </summary>
+    [JsonIgnore]
     public string EncryptedPassword = string.Empty;
 
     /// <summary>

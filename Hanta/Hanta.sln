@@ -33,11 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Server.ViewM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Server.Abstract", "LeeCoder.Hanta.Server.Abstract\LeeCoder.Hanta.Server.Abstract.csproj", "{3EDF58DD-2272-47CF-B2D8-916A34D025F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Common.Abstract", "LeeCoder.Hanta.Common.Abstract\LeeCoder.Hanta.Common.Abstract.csproj", "{54B2685B-2AFC-4856-9391-68484A4873C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Abstract", "LeeCoder.Hanta.Common.Abstract\LeeCoder.Hanta.Common.Abstract.csproj", "{54B2685B-2AFC-4856-9391-68484A4873C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Common.Views", "LeeCoder.Hanta.Common.Views\LeeCoder.Hanta.Common.Views.csproj", "{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Common.Services", "LeeCoder.Hanta.Common.Services\LeeCoder.Hanta.Common.Services.csproj", "{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Views", "LeeCoder.Hanta.Common.Views\LeeCoder.Hanta.Common.Views.csproj", "{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,10 +95,6 @@ Global
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,7 +113,6 @@ Global
 		{3EDF58DD-2272-47CF-B2D8-916A34D025F4} = {76912B9B-E077-46B2-8F1C-D66832F72918}
 		{54B2685B-2AFC-4856-9391-68484A4873C1} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
-		{0C96F7C5-BFF2-4F07-AD07-63CC8EA62CBC} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5878F959-87A8-479E-9177-EF7C375905A5}

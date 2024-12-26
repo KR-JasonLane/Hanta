@@ -7,47 +7,62 @@ namespace LeeCoder.Hanta.Common.Shared.Helpers;
 /// </summary>
 public class AesCryptoHelper
 {
+    #region Readonly Properties
+
     /// <summary>
     /// 암호화 키
     /// </summary>
     private static readonly string _defaultKey = "L~E!E@C#O$D^E&R*H(A)N_T+A?";
+
+    #endregion
+
+    #region Static Methods
 
     /// <summary>
     /// 암호화
     /// </summary>
     public static string Encrypt(string plainText, string key)
     {
-        //파라미터 검사
-        if (plainText.IsNullOrEmpty()) return string.Empty;
-
-        //키 파라미터 검사 후 비어있으면 기본키로 암호화
-        key = key.IsNullOrEmpty() ? _defaultKey : key;
-
-        using (var aesAlg = Aes.Create())
+        try
         {
-            aesAlg.Key = GenerateHashKey (key);
-            aesAlg.IV  = GenerateRandomIV(   );
+            //파라미터 검사
+            if (plainText.IsNullOrEmpty()) return string.Empty;
 
-            string ivString = Convert.ToBase64String(aesAlg.IV);
+            //키 파라미터 검사 후 비어있으면 기본키로 암호화
+            key = key.IsNullOrEmpty() ? _defaultKey : key;
 
-            ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-
-            using (MemoryStream msEncrypt = new MemoryStream())
+            using (var aesAlg = Aes.Create())
             {
-                using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                aesAlg.Key = GenerateHashKey (key);
+                aesAlg.IV  = GenerateRandomIV(   );
+
+                string ivString = Convert.ToBase64String(aesAlg.IV);
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
                 {
-                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                     {
-                        swEncrypt.Write(plainText);
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(plainText);
+                        }
+
+                        string encryptedString = Convert.ToBase64String(msEncrypt.ToArray());
+
+                        //암호화 시 생성된 IV값을 암호화된 문자열 앞에다가 같이저장.
+                        //복호화 시 키값과 함께 조합하여 복호화 됨.
+                        return $"{ivString}{encryptedString}";
                     }
-
-                    string encryptedString = Convert.ToBase64String(msEncrypt.ToArray());
-
-                    //암호화 시 생성된 IV값을 암호화된 문자열 앞에다가 같이저장.
-                    //복호화 시 키값과 함께 조합하여 복호화 됨.
-                    return $"{ivString}{encryptedString}";
                 }
             }
+        }
+        catch(Exception ex) 
+        {
+            ExceptionHelper.ProcessException(ex, true, "암호화 도중 에러가 발생했습니다.");
+
+            return string.Empty;
         }
     }
 
@@ -56,36 +71,45 @@ public class AesCryptoHelper
     /// </summary>
     public static string Decrypt(string cypherText, string key)
     {
-        //파라미터 검사
-        if (cypherText.IsNullOrEmpty()) return string.Empty;
-
-        //키 파라미터 검사 후 비어있으면 기본키로 복호화
-        key = key.IsNullOrEmpty() ? _defaultKey : key;
-
-        //암호화 시 함께 저장된 IV값과 암호화 문자열 분리
-        SplitIvAndEncryptedFromCypherString(cypherText, out string ivString, out string encryptedString);
-
-        byte[] encryptedByte = Convert.FromBase64String(encryptedString);
-
-        using (var aesAlg = Aes.Create())
+        try
         {
-            aesAlg.Key = GenerateHashKey         (key     );
-            aesAlg.IV  = Convert.FromBase64String(ivString);
+            //파라미터 검사
+            if (cypherText.IsNullOrEmpty()) return string.Empty;
 
-            // 복호화 객체 생성
-            ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+            //키 파라미터 검사 후 비어있으면 기본키로 복호화
+            key = key.IsNullOrEmpty() ? _defaultKey : key;
 
-            //복호화 파이프라인
-            using (MemoryStream msDecrypt = new MemoryStream(encryptedByte))
+            //암호화 시 함께 저장된 IV값과 암호화 문자열 분리
+            SplitIvAndEncryptedFromCypherString(cypherText, out string ivString, out string encryptedString);
+
+            byte[] encryptedByte = Convert.FromBase64String(encryptedString);
+
+            using (var aesAlg = Aes.Create())
             {
-                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                aesAlg.Key = GenerateHashKey         (key     );
+                aesAlg.IV  = Convert.FromBase64String(ivString);
+
+                // 복호화 객체 생성
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                //복호화 파이프라인
+                using (MemoryStream msDecrypt = new MemoryStream(encryptedByte))
                 {
-                    using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
                     {
-                        return srDecrypt.ReadToEnd();
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
                     }
                 }
             }
+        }
+        catch (Exception ex)
+        {
+            ExceptionHelper.ProcessException(ex, true, "복호화 도중 에러가 발생했습니다.");
+
+            return string.Empty;
         }
     }
 
@@ -127,4 +151,6 @@ public class AesCryptoHelper
         iv              = cypherString.Substring(0        , splitSize                      );
         encryptedString = cypherString.Substring(splitSize, cypherString.Length - splitSize);
     }
+
+    #endregion
 }

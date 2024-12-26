@@ -1,6 +1,6 @@
 ﻿using LeeCoder.Hanta.Client.ViewModels.Base;
+using LeeCoder.Hanta.Common.Shared.Helpers;
 using LeeCoder.Hanta.Common.Shared.Models;
-using LeeCoder.Hanta.Common.Abstract.Serivce;
 
 namespace LeeCoder.Hanta.Client.ViewModels.Login;
 
@@ -11,9 +11,14 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     /// <summary>
     /// 생성자
     /// </summary>
-    public LoginWindowViewModel(ILogService logService) : base(logService)
+    public LoginWindowViewModel()
     {
-        LoginModel = new LoginSettingModel();
+        ////////////////////////////////////////
+        // 사용자 설정 로드
+        ////////////////////////////////////////
+        {
+            LoginModel = SettingFileHelper.GetSettingModel<LoginSettingModel>();
+        }
     }
 
     #endregion
@@ -30,6 +35,7 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     #endregion
 
     #region :: Methods ::
+
 
     #endregion
 
@@ -68,7 +74,21 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     [RelayCommand]
     private void Login()
     {
+        bool isSuccessLogin = false;
 
+        ////////////////////////////////////////
+        // TODO : 서버로 로그인 요청
+        ////////////////////////////////////////
+        {
+
+        }
+
+        ////////////////////////////////////////
+        // 로그인 성공 시 로그인 정보 저장.
+        ////////////////////////////////////////
+        {
+            if(isSuccessLogin == true) SettingFileHelper.SaveSettingModel(LoginModel);
+        }
     }
 
     /// <summary>

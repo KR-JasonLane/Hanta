@@ -1,6 +1,4 @@
-﻿using LeeCoder.Hanta.Common.Services.Logger;
-using LeeCoder.Hanta.Common.Abstract.Serivce;
-using LeeCoder.Hanta.Client.ViewModels.Login;
+﻿using LeeCoder.Hanta.Client.ViewModels.Login;
 using LeeCoder.Hanta.Client.ViewModels.Main;
 
 namespace LeeCoder.Hanta.Client.App.Builder;
@@ -32,7 +30,7 @@ public class IocBuilder
         // Services
         ////////////////////////////////////////
         {
-            services.AddSingleton<ILogService, LogService>();
+
         }
 
 

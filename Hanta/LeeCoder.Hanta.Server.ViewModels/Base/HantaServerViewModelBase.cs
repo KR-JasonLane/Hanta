@@ -1,5 +1,4 @@
-﻿using LeeCoder.Hanta.Common.Abstract.Serivce;
-using LeeCoder.Hanta.Common.Abstract.ViewModel;
+﻿using LeeCoder.Hanta.Common.Abstract.ViewModel;
 
 namespace LeeCoder.Hanta.Server.ViewModels.Base;
 
@@ -13,24 +12,19 @@ public partial class HantaServerViewModelBase : ObservableRecipient, IHantaViewM
     /// <summary>
     /// 생성자
     /// </summary>
-    public HantaServerViewModelBase(ILogService logService)
+    public HantaServerViewModelBase()
     {
         ////////////////////////////////////////
         // 서비스 의존성 주입
         ////////////////////////////////////////
         {
-            _logService = logService;
+
         }
     }
 
     #endregion
 
     #region :: Properties ::
-
-    /// <summary>
-    /// 로그 서비스
-    /// </summary>
-    protected readonly ILogService _logService;
 
     #endregion
 
