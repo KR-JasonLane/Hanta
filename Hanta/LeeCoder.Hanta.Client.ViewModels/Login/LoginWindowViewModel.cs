@@ -1,4 +1,5 @@
 ﻿using LeeCoder.Hanta.Client.ViewModels.Base;
+using LeeCoder.Hanta.Common.Shared.Enums;
 using LeeCoder.Hanta.Common.Shared.Helpers;
 using LeeCoder.Hanta.Common.Shared.Models;
 
@@ -14,6 +15,14 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     public LoginWindowViewModel()
     {
         ////////////////////////////////////////
+        // 객체 초기화
+        ////////////////////////////////////////
+        {
+            DialogHostType = DialogHostType.LoginWindowDialogHost;
+        }
+
+
+        ////////////////////////////////////////
         // 사용자 설정 로드
         ////////////////////////////////////////
         {
@@ -27,10 +36,13 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     #region :: Properties ::
 
     /// <summary>
-    /// 유저 아이디
+    /// 유저 로그인 설정
     /// </summary>
     [ObservableProperty]
     private LoginSettingModel _loginModel;
+
+    [ObservableProperty]
+    private DialogHostType _dialogHostType;
 
     #endregion
 

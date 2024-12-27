@@ -16,6 +16,9 @@
                 <!--한타 스타일 정의 리소스 등록-->
                 <ResourceDictionary Source="/LeeCoder.Hanta.Common.Design;component/ResourceDictionary/HantaStyleDictionary.xaml"/>
 
+                <!--xaml 컨버터 정의 리소스 등록-->
+                <ResourceDictionary Source="/LeeCoder.Hanta.Common.Design;component/ResourceDictionary/ConverterDictionary.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

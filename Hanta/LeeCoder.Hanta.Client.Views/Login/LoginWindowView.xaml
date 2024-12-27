@@ -18,155 +18,159 @@
         <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="5" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
 
-    <Grid Background="AliceBlue">
-        
-        <i:Interaction.Behaviors>
-            <bhv:WindowDragMoveBehavior TargetWindow="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
-        </i:Interaction.Behaviors>
+    <md:DialogHost DialogTheme="Inherit"
+                   Identifier="{Binding DialogHostType, Converter={StaticResource EnumItemNameToStringConverter}}">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
+        <Grid Background="AliceBlue">
+            
+            <i:Interaction.Behaviors>
+                <bhv:WindowDragMoveBehavior TargetWindow="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </i:Interaction.Behaviors>
 
-        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
 
-            <StackPanel VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
+            <Grid Grid.Column="0">
 
-                <Image Source="{StaticResource HantaLogoImageSource_600_600}"
-                       Width="200"
-                       Height="200"/>
+                <StackPanel VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
 
-                <TextBlock Style="{StaticResource HantaBoldTextBlockStyle}"
-                           VerticalAlignment="Center"
-                           Foreground="DeepSkyBlue"
-                           FontSize="40"
-                           Text="Hanta Client"
-                           TextAlignment="Center"/>
+                    <Image Source="{StaticResource HantaLogoImageSource_600_600}"
+                           Width="200"
+                           Height="200"/>
 
-            </StackPanel>            
+                    <TextBlock Style="{StaticResource HantaBoldTextBlockStyle}"
+                               VerticalAlignment="Center"
+                               Foreground="DeepSkyBlue"
+                               FontSize="40"
+                               Text="Hanta Client"
+                               TextAlignment="Center"/>
 
-        </Grid>
-
-        <Grid Grid.Column="1" Cursor="">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0"
-                  Margin="10">
-                
-                <Button Style="{StaticResource MaterialDesignIconButton}"
-                        HorizontalAlignment="Left"
-                        Width="30"
-                        Height="30"
-                        ToolTip="서버 설정"
-                        ToolTipService.InitialShowDelay="0"
-                        Command="{Binding OpenServerConfigCommand}">
-
-                    <md:PackIcon Kind="ServerNetwork"/>
-
-                </Button>
-
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-
-                    <Button Style="{StaticResource MaterialDesignIconButton}"
-                            HorizontalAlignment="Right"
-                            Width="30"
-                            Height="30"
-                            ToolTip="창닫기"
-                            ToolTipService.InitialShowDelay="0"
-                            Command="{Binding CloseCommand}">
-
-                        <md:PackIcon Kind="Close"
-                                     Foreground="Crimson"/>
-
-                    </Button>
-
-                </StackPanel>
+                </StackPanel>            
 
             </Grid>
 
-            <StackPanel Grid.Row="1"
-                        VerticalAlignment="Center">
+            <Grid Grid.Column="1" Cursor="">
 
-                <TextBox Style="{StaticResource HantaDefaultTextBoxStyle}"
-                         md:HintAssist.Hint="아이디"
-                         md:HintAssist.Background="AliceBlue"
-                         Margin="10"
-                         Text="{Binding LoginModel.UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                </TextBox>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-                <PasswordBox Style="{StaticResource HantaDefaultPasswordBoxStyle}"
-                             md:HintAssist.Hint="비밀번호"
-                             md:HintAssist.Background="AliceBlue"
-                             Margin="10"
-                             md:PasswordBoxAssist.Password="{Binding LoginModel.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Grid Grid.Row="0"
+                      Margin="10">
+                    
+                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                            HorizontalAlignment="Left"
+                            Width="30"
+                            Height="30"
+                            ToolTip="서버 설정"
+                            ToolTipService.InitialShowDelay="0"
+                            Command="{Binding OpenServerConfigCommand}">
 
-                <Grid Margin="10 0">
+                        <md:PackIcon Kind="ServerNetwork"/>
+
+                    </Button>
 
                     <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Left">
+                                HorizontalAlignment="Right">
 
-                        <ToggleButton Style="{StaticResource HantaDefaultCheckBoxStyle}"
-                                      IsChecked="{Binding LoginModel.IsSaveUserID}">
+                        <Button Style="{StaticResource MaterialDesignIconButton}"
+                                HorizontalAlignment="Right"
+                                Width="30"
+                                Height="30"
+                                ToolTip="창닫기"
+                                ToolTipService.InitialShowDelay="0"
+                                Command="{Binding CloseCommand}">
 
-                            <md:ToggleButtonAssist.SwitchTrackOnBackground>
-                                <SolidColorBrush Color="DeepSkyBlue" />
-                            </md:ToggleButtonAssist.SwitchTrackOnBackground>
+                            <md:PackIcon Kind="Close"
+                                         Foreground="Crimson"/>
 
-                        </ToggleButton>
-
-
-                        <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Left"
-                                   Margin="0 2 0 0"
-                                   Text="아이디 저장"/>
+                        </Button>
 
                     </StackPanel>
 
-                    <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
-                               HorizontalAlignment="Right"
-                               Margin="0 2 0 0"
-                               Text="비밀번호 초기화"
-                               Opacity="0.5"
-                               Cursor="Hand">            
-                        
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="MouseLeftButtonDown">
-                                        <i:InvokeCommandAction Command="{Binding RequestInitPasswordCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                        
-                    </TextBlock>
-
                 </Grid>
 
-                <Button Style="{StaticResource HantaDefaultButtonStyle}"
-                        md:ButtonAssist.CornerRadius="25"
-                        VerticalAlignment="Center"
-                        Content="로그인"
+                <StackPanel Grid.Row="1"
+                            VerticalAlignment="Center">
+
+                    <TextBox Style="{StaticResource HantaDefaultTextBoxStyle}"
+                             md:HintAssist.Hint="아이디"
+                             md:HintAssist.Background="AliceBlue"
+                             Margin="10"
+                             Text="{Binding LoginModel.UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    </TextBox>
+
+                    <PasswordBox Style="{StaticResource HantaDefaultPasswordBoxStyle}"
+                                 md:HintAssist.Hint="비밀번호"
+                                 md:HintAssist.Background="AliceBlue"
+                                 Margin="10"
+                                 md:PasswordBoxAssist.Password="{Binding LoginModel.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Grid Margin="10 0">
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left">
+
+                            <ToggleButton Style="{StaticResource HantaDefaultCheckBoxStyle}"
+                                          IsChecked="{Binding LoginModel.IsSaveUserID}">
+
+                                <md:ToggleButtonAssist.SwitchTrackOnBackground>
+                                    <SolidColorBrush Color="DeepSkyBlue" />
+                                </md:ToggleButtonAssist.SwitchTrackOnBackground>
+
+                            </ToggleButton>
+
+
+                            <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="0 2 0 0"
+                                       Text="아이디 저장"/>
+
+                        </StackPanel>
+
+                        <TextBlock Style="{StaticResource HantaDefaultTextBlockStyle}"
+                                   HorizontalAlignment="Right"
+                                   Margin="0 2 0 0"
+                                   Text="비밀번호 초기화"
+                                   Opacity="0.5"
+                                   Cursor="Hand">            
+                            
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                                            <i:InvokeCommandAction Command="{Binding RequestInitPasswordCommand}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                            
+                        </TextBlock>
+
+                    </Grid>
+
+                    <Button Style="{StaticResource HantaDefaultButtonStyle}"
+                            md:ButtonAssist.CornerRadius="25"
+                            VerticalAlignment="Center"
+                            Content="로그인"
+                            Margin="10"
+                            FontSize="25"
+                            Height="50"
+                            Command="{Binding LoginCommand}"/>
+
+                </StackPanel>
+
+                <Button Grid.Row="2"
                         Margin="10"
-                        FontSize="25"
-                        Height="50"
-                        Command="{Binding LoginCommand}"/>
+                        Style="{StaticResource HantaNoneBackgroundButtonStyle}"
+                        Content="가입요청"
+                        Command="{Binding RequestRegisterCommand}"/>
 
-            </StackPanel>
-
-            <Button Grid.Row="2"
-                    Margin="10"
-                    Style="{StaticResource HantaNoneBackgroundButtonStyle}"
-                    Content="가입요청"
-                    Command="{Binding RequestRegisterCommand}"/>
-
+            </Grid>
+            
         </Grid>
-        
-    </Grid>
-    
+    </md:DialogHost>
 </Window>
+    

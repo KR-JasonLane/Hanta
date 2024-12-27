@@ -17,10 +17,8 @@ public partial class EncryptPasswordModel : ObservableObject
 
     /// <summary>
     /// 암호화된 패스워드
-    /// Json직렬화에는 포함되지 않음
     /// </summary>
-    [JsonIgnore]
-    public string EncryptedPassword = string.Empty;
+    public string Encrypted = string.Empty;
 
     /// <summary>
     /// 암호화
@@ -29,7 +27,7 @@ public partial class EncryptPasswordModel : ObservableObject
     {
         if (string.IsNullOrEmpty(Password)) return;
 
-        EncryptedPassword = AesCryptoHelper.Encrypt(Password, string.Empty);
+        Encrypted = AesCryptoHelper.Encrypt(Password, string.Empty);
     }
 
     /// <summary>
@@ -37,8 +35,8 @@ public partial class EncryptPasswordModel : ObservableObject
     /// </summary>
     public void Decrypt()
     { 
-        if(string.IsNullOrEmpty(EncryptedPassword)) return;
+        if(string.IsNullOrEmpty(Encrypted)) return;
 
-        Password = AesCryptoHelper.Decrypt(EncryptedPassword, string.Empty);
+        Password = AesCryptoHelper.Decrypt(Encrypted, string.Empty);
     }
 }

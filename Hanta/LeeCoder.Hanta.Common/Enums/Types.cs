@@ -10,3 +10,11 @@ public enum LogType
     Error,
     Fatal
 }
+
+/// <summary>
+/// 다이얼로그 호스트 타입 정의
+/// </summary>
+public enum DialogHostType
+{
+    LoginWindowDialogHost,
+}
