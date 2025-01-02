@@ -1,4 +1,6 @@
-﻿using LeeCoder.Hanta.Client.ViewModels.Login;
+﻿using LeeCoder.Hanta.Client.Abstract.Service;
+using LeeCoder.Hanta.Client.Services.Dialog;
+using LeeCoder.Hanta.Client.ViewModels.Login;
 using LeeCoder.Hanta.Client.ViewModels.Main;
 
 namespace LeeCoder.Hanta.Client.App.Builder;
@@ -30,7 +32,7 @@ public class IocBuilder
         // Services
         ////////////////////////////////////////
         {
-
+            services.AddSingleton<IDialogService, DialogService>();
         }
 
 
@@ -39,7 +41,7 @@ public class IocBuilder
         ////////////////////////////////////////
         {
             services.AddTransient<HantaClientWindowViewModel>();
-            services.AddTransient<LoginWindowViewModel>();
+            services.AddTransient<LoginWindowViewModel      >();
         }
 
 

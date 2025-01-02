@@ -1,4 +1,5 @@
-﻿using LeeCoder.Hanta.Client.ViewModels.Base;
+﻿using LeeCoder.Hanta.Client.Abstract.Service;
+using LeeCoder.Hanta.Client.ViewModels.Base;
 using LeeCoder.Hanta.Common.Shared.Enums;
 using LeeCoder.Hanta.Common.Shared.Helpers;
 using LeeCoder.Hanta.Common.Shared.Models;
@@ -12,8 +13,15 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     /// <summary>
     /// 생성자
     /// </summary>
-    public LoginWindowViewModel()
+    public LoginWindowViewModel(IDialogService dialogService)
     {
+        ////////////////////////////////////////
+        // 서비스 등록
+        ////////////////////////////////////////
+        {
+            _dialogService = dialogService;
+        }
+
         ////////////////////////////////////////
         // 객체 초기화
         ////////////////////////////////////////
@@ -32,6 +40,14 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
 
     #endregion
 
+    #region :: Services ::
+
+    /// <summary>
+    /// 다이얼로그 서비스
+    /// </summary>
+    private readonly IDialogService _dialogService;
+
+    #endregion
 
     #region :: Properties ::
 
@@ -41,6 +57,9 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     [ObservableProperty]
     private LoginSettingModel _loginModel;
 
+    /// <summary>
+    /// 전용 다이얼로그 호스트 타입 지정
+    /// </summary>
     [ObservableProperty]
     private DialogHostType _dialogHostType;
 
