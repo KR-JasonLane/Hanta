@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Abstr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Views", "LeeCoder.Hanta.Common.Views\LeeCoder.Hanta.Common.Views.csproj", "{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Client.Utils", "LeeCoder.Hanta.Client.Utils\LeeCoder.Hanta.Client.Utils.csproj", "{59E5A15C-4EF6-442B-B47D-7F6A19157010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E5A15C-4EF6-442B-B47D-7F6A19157010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E5A15C-4EF6-442B-B47D-7F6A19157010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E5A15C-4EF6-442B-B47D-7F6A19157010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E5A15C-4EF6-442B-B47D-7F6A19157010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{3EDF58DD-2272-47CF-B2D8-916A34D025F4} = {76912B9B-E077-46B2-8F1C-D66832F72918}
 		{54B2685B-2AFC-4856-9391-68484A4873C1} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
+		{59E5A15C-4EF6-442B-B47D-7F6A19157010} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5878F959-87A8-479E-9177-EF7C375905A5}
