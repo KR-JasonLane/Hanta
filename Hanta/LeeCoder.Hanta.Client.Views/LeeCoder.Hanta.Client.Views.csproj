@@ -12,4 +12,10 @@
     <ProjectReference Include="..\LeeCoder.Hanta.Design\LeeCoder.Hanta.Common.Design.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Dialog\DialogServerConfigView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

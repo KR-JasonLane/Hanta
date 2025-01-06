@@ -1,7 +1,10 @@
 ﻿using LeeCoder.Hanta.Client.Abstract.Service;
+
 using LeeCoder.Hanta.Client.Services.Dialog;
+
 using LeeCoder.Hanta.Client.ViewModels.Login;
 using LeeCoder.Hanta.Client.ViewModels.Main;
+using LeeCoder.Hanta.Client.ViewModels.Dialog;
 
 namespace LeeCoder.Hanta.Client.App.Builder;
 
@@ -50,6 +53,14 @@ public class IocBuilder
         ////////////////////////////////////////
         {
 
+        }
+
+
+        ////////////////////////////////////////
+        // Dialog ContentView DataContexts
+        ////////////////////////////////////////
+        {
+            services.AddTransient<DialogServerConfigViewModel>();
         }
 
         return services.BuildServiceProvider();

@@ -1,5 +1,9 @@
 ﻿using LeeCoder.Hanta.Client.Abstract.Service;
+
 using LeeCoder.Hanta.Client.ViewModels.Base;
+
+using LeeCoder.Hanta.Client.Utils.Enums;
+
 using LeeCoder.Hanta.Common.Shared.Enums;
 using LeeCoder.Hanta.Common.Shared.Helpers;
 using LeeCoder.Hanta.Common.Shared.Models;
@@ -78,7 +82,8 @@ public partial class LoginWindowViewModel : HantaClientViewModelBase
     [RelayCommand]
     private void OpenServerConfig()
     {
-
+        //서버설정 다이얼로그 띄워주기
+        _dialogService.ShowDialog(DialogContentType.ServerConfig);
     }
 
     /// <summary>

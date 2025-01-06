@@ -14,12 +14,6 @@ public abstract partial class HantaClientViewModelBase : ObservableRecipient, IH
     /// </summary>
     public HantaClientViewModelBase()
     {
-        ////////////////////////////////////////
-        // 서비스 의존성 주입
-        ////////////////////////////////////////
-        {
-
-        }
     }
 
     #endregion
