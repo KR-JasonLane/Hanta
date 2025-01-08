@@ -4,7 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         
         <!--기본 테마 설정-->
-        <md:CustomColorTheme BaseTheme="Dark" PrimaryColor="LightSkyBlue" SecondaryColor="Gray" />
+        <md:CustomColorTheme BaseTheme="Light" PrimaryColor="LightSkyBlue" SecondaryColor="Gray" />
 
         <!--리소스 참조-->
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />

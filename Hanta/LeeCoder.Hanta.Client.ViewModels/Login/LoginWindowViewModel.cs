@@ -4,9 +4,10 @@ using LeeCoder.Hanta.Client.ViewModels.Base;
 
 using LeeCoder.Hanta.Client.Utils.Enums;
 
+using LeeCoder.Hanta.Client.Models.Setting;
+
 using LeeCoder.Hanta.Common.Shared.Enums;
 using LeeCoder.Hanta.Common.Shared.Helpers;
-using LeeCoder.Hanta.Common.Shared.Models;
 
 namespace LeeCoder.Hanta.Client.ViewModels.Login;
 

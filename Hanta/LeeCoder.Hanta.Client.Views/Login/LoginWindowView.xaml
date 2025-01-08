@@ -102,8 +102,7 @@
                              md:HintAssist.Hint="아이디"
                              md:HintAssist.Background="AliceBlue"
                              Margin="10"
-                             Text="{Binding LoginModel.UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                    </TextBox>
+                             Text="{Binding LoginModel.UserID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                     <PasswordBox Style="{StaticResource HantaDefaultPasswordBoxStyle}"
                                  md:HintAssist.Hint="비밀번호"

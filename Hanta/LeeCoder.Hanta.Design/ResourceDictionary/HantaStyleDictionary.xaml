@@ -38,6 +38,8 @@
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontFamily" Value="{StaticResource Jalnan}"/>
         <Setter Property="md:HintAssist.IsFloating" Value="False"/>
+        <Setter Property="md:HintAssist.Background" Value="Transparent"/>
+        <Setter Property="md:HintAssist.Foreground" Value="LightGray"/>
         <Setter Property="BorderBrush" Value="LightSkyBlue"/>
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
@@ -51,6 +53,8 @@
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontFamily" Value="{StaticResource Jalnan}"/>
         <Setter Property="md:HintAssist.IsFloating" Value="False"/>
+        <Setter Property="md:HintAssist.Background" Value="Transparent"/>
+        <Setter Property="md:HintAssist.Foreground" Value="LightGray"/>
         <Setter Property="BorderBrush" Value="LightSkyBlue"/>
         <Setter Property="BorderThickness" Value="2"/>
     </Style>

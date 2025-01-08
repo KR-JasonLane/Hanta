@@ -1,4 +1,6 @@
-﻿namespace LeeCoder.Hanta.Common.Shared.Models;
+﻿using LeeCoder.Hanta.Common.Shared.Models;
+
+namespace LeeCoder.Hanta.Client.Models.Setting;
 
 /// <summary>
 /// 로그인 설정 모델

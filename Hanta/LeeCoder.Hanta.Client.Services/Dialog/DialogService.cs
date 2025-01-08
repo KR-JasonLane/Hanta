@@ -24,28 +24,13 @@ public class DialogService : IDialogService
     /// </summary>
     public DialogService()
     {
-        ////////////////////////////////////////
-        // 서비스 초기화
-        ////////////////////////////////////////
-        {
-            InitializeService();
-        }
+
     }
 
     #endregion
 
 
     #region :: Properties ::
-
-    /// <summary>
-    /// 현재 나타내고 있는 다이얼로그의 타입
-    /// </summary>
-    private DialogContentType _currentType;
-
-    /// <summary>
-    /// 현재 다이얼로그 Context
-    /// </summary>
-    private IHantaViewModel? _currentDataContext;
 
     #endregion
 
@@ -67,9 +52,6 @@ public class DialogService : IDialogService
         //다이얼로그 뷰모델 생성
         IHantaViewModel dialogViewModel = new DialogShellViewModel();
 
-        //생성한 뷰모델 기억
-        _currentDataContext = dialogViewModel;
-
         //다이얼로그 뷰 객체 생성
         object? dialogView = new DialogShellView() { DataContext = dialogViewModel };
 
@@ -79,8 +61,8 @@ public class DialogService : IDialogService
         //다이얼로그 호출
         object? result = DialogHost.Show(dialogView, DialogHostType.LoginWindowDialogHost.ToString());
 
-        //서비스 초기화
-        InitializeService();
+        //뷰모델 메시지구독 해제
+        dialogViewModel.UnRegisterMessages();
 
         //결과 반환
         return result is true;
@@ -90,27 +72,7 @@ public class DialogService : IDialogService
     /// 다이얼로그의 형태를 변경
     /// </summary>
     /// <param name="type"> 변경할 다이얼로그 형태의 타입 </param>
-    public void ChangeDialogContent(DialogContentType type, string message = "")
-    {
-        //현재 상태와 같으면 변경하지 않음.
-        if (type == _currentType) return;
-    }
-
-    /// <summary>
-    /// 서비스 상태 초기화
-    /// </summary>
-    private void InitializeService()
-    {
-        //기억된 DataContext가 있을 경우
-        //메시지 구독을 모두 풀어준 후 null로 만들어 준다.
-        if(_currentDataContext != null)
-        {
-            _currentDataContext.UnRegisterMessages();
-            _currentDataContext = null;
-        }
-
-        _currentType = DialogContentType.Initialize;
-    }
+    public void ChangeDialogContent(DialogContentType type, string message = "") => SendChangeDialogContentMessage(type, message);
 
     /// <summary>
     /// ChangeDialogContentParameter 생성

@@ -4,9 +4,121 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeeCoder.Hanta.Client.Views.Dialog"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="200">
+             FontFamily="{StaticResource Jalnan}"
+             Height="280"
+             Width="300">
+
+    <UserControl.Resources>
+        
+        <Style x:Key="HantaServerConfigTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource HantaDefaultTextBoxStyle}">            
+            <Setter Property="Margin" Value="0 5"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+
+        <Style x:Key="HantaServerConfigButtonStyle" TargetType="Button" BasedOn="{StaticResource HantaDefaultButtonStyle}">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <Style x:Key="HantaServerConfigHintTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource HantaBoldTextBlockStyle}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="SkyBlue"/>
+        </Style>
+        
+    </UserControl.Resources>
+    
     <Grid>
+
+        <Button Style="{StaticResource MaterialDesignIconButton}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="30"
+                Height="30"
+                ToolTip="닫기"
+                ToolTipService.InitialShowDelay="0"
+                Command="{Binding CloseCommand}">
+
+            <md:PackIcon Kind="Close"
+                         Foreground="Crimson"/>
+
+        </Button>
+        
+        <Grid Margin="10">
             
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Grid.Row="0"
+                       Style="{StaticResource HantaBoldTextBlockStyle}"
+                       Text="서버설정"
+                       FontSize="25"
+                       VerticalAlignment="Center"
+                       Foreground="DeepSkyBlue"/>
+
+            <Grid Grid.Row="1">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Style="{StaticResource HantaServerConfigHintTextBlockStyle}"
+                           Text="아이피"/>
+
+                <TextBox Grid.Row="0"
+                         Grid.Column="1"
+                         Style="{StaticResource HantaServerConfigTextBoxStyle}"
+                         Text="{Binding ServerModel.IP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Style="{StaticResource HantaServerConfigHintTextBlockStyle}"
+                           Text="포트"/>
+
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Style="{StaticResource HantaServerConfigTextBoxStyle}"
+                         Text="{Binding ServerModel.Port, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                
+            </Grid>
+
+            <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0" 
+                        Style="{StaticResource HantaServerConfigButtonStyle}"
+                        Content="테스트"
+                        Command="{Binding ConnectionTestCommand}"/>
+
+                <Button Grid.Column="1"
+                        Style="{StaticResource HantaServerConfigButtonStyle}"
+                        Content="저장"
+                        Command="{Binding SaveCommand}"/>
+
+            </Grid>
+        </Grid>
+
     </Grid>
+    
 </UserControl>
