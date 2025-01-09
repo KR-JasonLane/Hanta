@@ -7,6 +7,7 @@ using LeeCoder.Hanta.Client.Utils.Messenger.Parameter;
 using LeeCoder.Hanta.Client.ViewModels.Dialog;
 
 using LeeCoder.Hanta.Client.Views.Dialog;
+
 using LeeCoder.Hanta.Common.Abstract.ViewModel;
 using LeeCoder.Hanta.Common.Shared.Enums;
 
@@ -59,10 +60,11 @@ public class DialogService : IDialogService
         SendChangeDialogContentMessage(type, message);
 
         //다이얼로그 호출
-        object? result = DialogHost.Show(dialogView, DialogHostType.LoginWindowDialogHost.ToString());
-
-        //뷰모델 메시지구독 해제
-        dialogViewModel.UnRegisterMessages();
+        object? result = DialogHost.Show(dialogView, DialogHostType.LoginWindowDialogHost.ToString(), null, null, (s, e) =>
+        {
+            //다이얼로그를 닫을 때 뷰모델 메시지구독 해제
+            dialogViewModel.UnRegisterMessages();
+        });
 
         //결과 반환
         return result is true;

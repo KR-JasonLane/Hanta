@@ -49,15 +49,6 @@ public partial class DialogServerConfigViewModel : HantaClientViewModelBase
     #region :: Commands ::
 
     /// <summary>
-    /// 다이얼로그 닫기
-    /// </summary>
-    [RelayCommand]
-    private void Close()
-    {
-
-    }
-
-    /// <summary>
     /// 서버 연결 테스트
     /// </summary>
     [RelayCommand]
@@ -70,10 +61,7 @@ public partial class DialogServerConfigViewModel : HantaClientViewModelBase
     /// 설정 저장 후 닫기
     /// </summary>
     [RelayCommand]
-    private void Save()
-    {
-
-    }
+    private void Save() => SettingFileHelper.SaveSettingModel(ServerModel);
 
     #endregion
 }

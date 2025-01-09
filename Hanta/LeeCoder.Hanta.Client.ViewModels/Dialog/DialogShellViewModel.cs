@@ -61,6 +61,17 @@ public partial class DialogShellViewModel : HantaClientViewModelBase
         this.DialogContent = param.Content;
     }
 
+    /// <summary>
+    /// 메시지 구독 해제 시 
+    /// Content요소의 메시지도 구독 해제
+    /// </summary>
+    public override void UnRegisterMessages()
+    {
+        base.UnRegisterMessages();
+
+        if(DialogContent != null) DialogContent.UnRegisterMessages();
+    }
+
     #endregion
 
     #region :: Commands ::
