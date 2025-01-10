@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeeCoder.Hanta.Common.Views.Main"
-        Background="{DynamicResource MaterialDesignPaper}"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:bhv="clr-namespace:LeeCoder.Hanta.Common.Shared.Behaviors;assembly=LeeCoder.Hanta.Common.Shared"
         FontFamily="{StaticResource Jalnan}"
         mc:Ignorable="d"
         Title="HANTA"
@@ -13,6 +15,15 @@
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="5" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style x:Key="HantaWindowTitleBarButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButton}">
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style> 
+    </Window.Resources>
     
     <Grid>
 
@@ -20,6 +31,51 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+              Background="SkyBlue">
+            
+            <i:Interaction.Behaviors>
+                <bhv:WindowDragMoveBehavior TargetWindow="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </i:Interaction.Behaviors>
+
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+
+                <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
+                        Command="{Binding CloseCommand}">
+
+                    <md:PackIcon Kind="WindowMinimize"
+                                 Foreground="AliceBlue"/>
+
+                </Button>
+
+                <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
+                                Command="{Binding CloseCommand}">
+
+                    <md:PackIcon Kind="WindowMaximize"
+                                 Foreground="AliceBlue"/>
+
+                </Button>
+
+                <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
+                                Command="{Binding CloseCommand}">
+
+                    <md:PackIcon Kind="Close"
+                                 Foreground="Crimson"/>
+
+                </Button>
+
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            
+            
+            
+        </Grid>
 
     </Grid>
 </Window>
