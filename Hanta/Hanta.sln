@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Views
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Client.Utils", "LeeCoder.Hanta.Client.Utils\LeeCoder.Hanta.Client.Utils.csproj", "{59E5A15C-4EF6-442B-B47D-7F6A19157010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeCoder.Hanta.Client.Models", "LeeCoder.Hanta.Client.Models\LeeCoder.Hanta.Client.Models.csproj", "{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Client.Models", "LeeCoder.Hanta.Client.Models\LeeCoder.Hanta.Client.Models.csproj", "{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeeCoder.Hanta.Common.Services", "LeeCoder.Hanta.Common.Services\LeeCoder.Hanta.Common.Services.csproj", "{D0D1142F-7B87-4B21-A448-5560555172B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D1142F-7B87-4B21-A448-5560555172B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D1142F-7B87-4B21-A448-5560555172B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D1142F-7B87-4B21-A448-5560555172B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D1142F-7B87-4B21-A448-5560555172B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{9CEC6C11-8116-4311-AC9E-3D17CE7F28E8} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 		{59E5A15C-4EF6-442B-B47D-7F6A19157010} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
 		{BEFD2C8A-4AEE-4ACD-BB45-81A169F11FB1} = {C1944C63-5C29-4B54-B7BF-14DDC205463E}
+		{D0D1142F-7B87-4B21-A448-5560555172B8} = {B84346E1-3FA1-4317-9954-DB57B700A2B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5878F959-87A8-479E-9177-EF7C375905A5}

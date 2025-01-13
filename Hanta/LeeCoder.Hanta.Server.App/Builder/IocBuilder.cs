@@ -1,4 +1,7 @@
-﻿using LeeCoder.Hanta.Server.ViewModels.Main;
+﻿using LeeCoder.Hanta.Common.Abstract.Service;
+using LeeCoder.Hanta.Common.Services.WindowState;
+
+using LeeCoder.Hanta.Server.ViewModels.Main;
 
 namespace LeeCoder.Hanta.Server.App.Builder;
 
@@ -29,7 +32,7 @@ public class IocBuilder
         // Services
         ////////////////////////////////////////
         {
-
+            services.AddSingleton<IMainWindowManagementService, MainWindowManagementService>();
         }
 
 

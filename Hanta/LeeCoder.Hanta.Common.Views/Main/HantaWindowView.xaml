@@ -10,19 +10,21 @@
         FontFamily="{StaticResource Jalnan}"
         mc:Ignorable="d"
         Title="HANTA"
-        Height="450" Width="800">
+        MinHeight="450" MinWidth="800">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="5" CaptionHeight="0"/>
+        <WindowChrome ResizeBorderThickness="4" GlassFrameThickness="4" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
 
     <Window.Resources>
-        <Style x:Key="HantaWindowTitleBarButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignIconButton}">
-            <Setter Property="Width" Value="35"/>
-            <Setter Property="Height" Value="35"/>
+        <Style x:Key="HantaWindowTitleBarButtonStyle" TargetType="Button" BasedOn="{StaticResource HantaNoneBackgroundButtonStyle}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Foreground" Value="Gray"/>
-            <Setter Property="Margin" Value="2"/>
-        </Style> 
+            <Setter Property="Margin" Value="1 0"/>
+            <Setter Property="Padding" Value="1"/>
+        </Style>
+        
     </Window.Resources>
     
     <Grid>
@@ -44,26 +46,32 @@
                         Orientation="Horizontal">
 
                 <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
-                        Command="{Binding CloseCommand}">
+                        Command="{Binding MinimizeCommand}">
 
                     <md:PackIcon Kind="WindowMinimize"
-                                 Foreground="AliceBlue"/>
+                                 Foreground="AliceBlue"
+                                 Width="25"
+                                 Height="25"/>
 
                 </Button>
 
                 <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
-                                Command="{Binding CloseCommand}">
+                        Command="{Binding NormalOrMaximizeCommand}">
 
                     <md:PackIcon Kind="WindowMaximize"
-                                 Foreground="AliceBlue"/>
+                                 Foreground="AliceBlue"
+                                 Width="25"
+                                 Height="25"/>
 
                 </Button>
 
                 <Button Style="{StaticResource HantaWindowTitleBarButtonStyle}"
-                                Command="{Binding CloseCommand}">
+                        Command="{Binding CloseCommand}">
 
                     <md:PackIcon Kind="Close"
-                                 Foreground="Crimson"/>
+                                 Foreground="Crimson"
+                                 Width="25"
+                                 Height="25"/>
 
                 </Button>
 
