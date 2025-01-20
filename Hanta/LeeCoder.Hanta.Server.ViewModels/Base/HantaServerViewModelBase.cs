@@ -34,7 +34,7 @@ public partial class HantaServerViewModelBase : ObservableRecipient, IHantaViewM
     /// 메모리 해제
     /// 구독된 메신저를 모두 해제한다.
     /// </summary>
-    public void UnRegisterMessages() => WeakReferenceMessenger.Default.UnregisterAll(this);
+    public virtual void UnRegisterMessages() => WeakReferenceMessenger.Default.UnregisterAll(this);
 
     #endregion
 

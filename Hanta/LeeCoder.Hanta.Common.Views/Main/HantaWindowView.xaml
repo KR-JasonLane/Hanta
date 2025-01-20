@@ -79,11 +79,7 @@
             
         </Grid>
 
-        <Grid Grid.Row="1">
-            
-            
-            
-        </Grid>
+        <ContentControl Content="{Binding HantaContent}"/>
 
     </Grid>
 </Window>

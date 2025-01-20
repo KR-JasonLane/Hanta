@@ -48,7 +48,7 @@ public class IocBuilder
         // ContentView DataContexts
         ////////////////////////////////////////
         {
-
+            services.AddTransient<HantaServerContentViewModel>();
         }
 
         return services.BuildServiceProvider();

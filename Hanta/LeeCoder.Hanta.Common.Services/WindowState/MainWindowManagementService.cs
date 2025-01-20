@@ -26,6 +26,9 @@ public class MainWindowManagementService : IMainWindowManagementService
 
     #region :: Properties ::
 
+    /// <summary>
+    /// 메인윈도우 기억
+    /// </summary>
     private readonly Window _mainWindow;
 
     #endregion
